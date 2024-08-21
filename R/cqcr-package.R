@@ -24,14 +24,25 @@ NULL
 
 # Checking for API key on package load
 .onLoad <- function(libname, pkgname) {
-  if (is.null(getOption("cqc.partner.code"))) {
-    key <- Sys.getenv("CQC_PARTNER_CODE")
+  if (is.null(getOption("cqc.subscription.key"))) {
+    key <- Sys.getenv("CQC_SUBSCRIPTION_KEY")
     if (key != "") {
-      if (substr(key, 1, 13) != "&partnerCode=") {
-        key <- paste0("&partnerCode=", key)
-      }
-      options("cqc.partner.code" = key)
+      key <- paste0(key)
     }
+    options("cqc.subscription.key" = key)
   }
-  invisible()
 }
+invisible()
+
+# .onLoad <- function(libname, pkgname) {
+#   if (is.null(getOption("cqc.partner.code"))) {
+#     key <- Sys.getenv("CQC_PARTNER_CODE")
+#     if (key != "") {
+#       if (substr(key, 1, 13) != "&partnerCode=") {
+#         key <- paste0("&partnerCode=", key)
+#       }
+#       options("cqc.partner.code" = key)
+#     }
+#   }
+#   invisible()
+# }
