@@ -9,4 +9,6 @@ test_that("basic locations works", {
   insp_loc1 <- cqc_location_inspection_area("1-122710325")
 
   expect_true(is.list(insp_loc1))
+
+  options("cqc.subscription.key" = NULL) # Clear the option after the test
 })
