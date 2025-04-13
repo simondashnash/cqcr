@@ -26,7 +26,7 @@ library(tidyr)
 
 ## CQC Partner Codes
 
-The Care Quality Comission requires registration and the use of keys to access the API, and these can be obtained from their website. You can set the code for each session with `cqc_subscription_key()`, or store it in an environmental variable named `CQC_SUBSCRIPTION_KEY`.
+The Care Quality Commission requires registration and the use of keys to access the API, and these can be obtained from their website. You can set the code for each session with `cqc_subscription_key()`, or store it in an environment variable named `CQC_SUBSCRIPTION_KEY`.
 
 ## Using `cqcr`
 
